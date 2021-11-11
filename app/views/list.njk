@@ -1,0 +1,26 @@
+{% extends "./template/base.njk" %}
+{% block page %}
+<div class="flex flex-col w-full">
+    <h1 class="text-red-500 pb-12 text-4xl">Lista de Lojas</h1>
+
+    <table class="table-auto border p-2">
+  <thead>
+    <tr class="text-left">
+      <th class="border p-2">Loja</th>
+      <th class="border p-2">Proprietário</th>
+      <th class="border text-center p-2">Detalhes</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for store in stores %}
+    <tr class="border">
+      <td class="border p-2">{{store.storename}}</td>
+      <td class="border p-2">{{store.ownername}}</td>
+      <td class="border text-center"><a class="bg-red-700 hover:bg-red-500 p-2 text-white" href="/detail/{{store.id}}">VISUALIZAR</a></td>
+    </tr>
+     {% endfor %}
+  </tbody>
+</table>
+</div>
+
+{% endblock %}

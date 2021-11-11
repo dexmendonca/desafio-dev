@@ -1,0 +1,26 @@
+{
+  "name": "desafio-dev",
+  "version": "0.0.1",
+  "main": "app/server.js",
+  "repository": "git@github.com:dexmendonca/desafio-dev.git",
+  "author": "André Mendonça e Silva <dexmendoncadev@gmail.com>",
+  "license": "UNLINCESED",
+  "private": true,
+  "scripts": {
+    "start": "node app/server.js",
+    "dev": "npx nodemon -e njk,html,css,js,json",
+    "container:start": "docker-compose up -d --build",
+    "container:stop": "docker-compose down"
+  },
+  "dependencies": {
+    "dayjs": "^1.10.7",
+    "express": "^4.17.1",
+    "knex": "^0.95.14",
+    "multer": "^1.4.3",
+    "nunjucks": "^3.2.3",
+    "pg": "^8.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

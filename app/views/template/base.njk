@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Dev</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex flex-col">
+    <nav class="bg-gray-800 shadow ">
+        <div class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
+            <div class="flex items-center justify-between">
+                <div>
+                    <a class="text-2xl font-bold text-red-800 lg:text-3xl hover:text-red-700 " href="/">Desafio</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="flex md:hidden">
+                    <button type="button" class="text-white-500  hover:text-white-600  focus:outline-none focus:text-gray-600 " aria-label="toggle menu">
+                        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+                            <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+            <div class="items-center md:flex">
+                <div class="flex flex-col md:flex-row md:mx-6">
+                    <a class="my-1 text-sm font-medium text-white  hover:text-red-500  md:mx-4 md:my-0" href="/upload">Upload</a>
+                    <a class="my-1 text-sm font-medium text-white  hover:text-red-500  md:mx-4 md:my-0" href="/list">Lista</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="w-screen min-h-100% flex p-48">
+        {% block page %}
+            
+        {% endblock %}
+    </div> 
+</body>
+</html>

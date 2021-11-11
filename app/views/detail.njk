@@ -1,0 +1,41 @@
+{% extends "./template/base.njk" %}
+{% block page %}
+<div class="flex flex-col w-full">
+
+    <h1 class="text-red-500  text-4xl">Movimentações - {{tscs.storeinfo.name}}</h1>
+    <h2 class="text-red-700 pb-5  text-3xl">Proprietário: {{tscs.storeinfo.owner}}</h2>
+    <h3 class="pb-12  text-3xl">Saldo em conta: {{tscs.balance_label}}</h3>
+
+    <table class="table-auto border p-2">
+        <thead>
+            <tr class="text-left">
+                <th class="border p-2"></th>
+                <th class="border p-2">Tipo</th>
+                <th class="border p-2">CPF</th>
+                <th class="border p-2">Cartão</th>
+                <th class="border text-center p-2">Valor</th>
+                <th class="border p-2">Ocorrido Em:</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tsc in tscs.statement %}
+            <tr class="border
+                {% if tsc.value >0 %}
+                    text-green-500
+                {% else %}
+                    text-red-500
+                {% endif %}
+            ">
+                <td class="border p-2 text-center">{{tsc.signal}}</td>
+                <td class="border p-2">{{tsc.operation}}</td>
+                <td class="border p-2">{{tsc.cpf}}</td>
+                <td class="border p-2">{{tsc.cardnumber}}</td>
+                <td class="border text-center p-2">{{tsc.value_label}}</td>
+                <td class="border p-2">{{tsc.occurred_at}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
