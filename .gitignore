@@ -1,0 +1,4 @@
+node_modules
+sandbox*
+app/files/*
+!app/files/.gitkeep
